@@ -1,0 +1,25 @@
+@import url("constants.css");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+
+}
+
+section {
+  /* padding: 5em 2em; */
+}
+
+img {
+  /* display: block;
+  max-width: 100%; */
+}
+
