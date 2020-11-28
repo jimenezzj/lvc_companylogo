@@ -70,8 +70,6 @@ a {
 }
 
 /*------------ C O M P O N E N T S ------------*/
-
-/*------------ S E C T I O N S ------------*/
 .btn {
   padding: var(--spacing-s);
   background-color: transparent;
@@ -106,6 +104,58 @@ a {
 .btn-primary:active {
   background-color: var(--clr-secondary);
 }
+
+.card {
+  box-shadow: var(--bs);
+  border-radius: var(--spacing-l);
+  margin-bottom: var(--spacing-m);
+  padding: var(--spacing-l) var(--spacing-s);
+  text-align: start;
+}
+.card:first-of-type {
+  margin: 0;
+}
+
+.card > figure {
+  display: none;
+}
+
+.card__info {
+}
+.card__info h2,
+.card__info h3 {
+  color: var(--clr-primary);
+}
+.card__info h3 {
+  padding-bottom: 0;
+}
+.card__info h2 {
+  padding-bottom: var(--spacing-xxs);
+}
+.card__info p {
+  color: var(--clr-black);
+}
+
+.card__list {
+  padding-top: var(--spacing-s);
+}
+
+.card__item {
+  padding-bottom: var(--spacing-s);
+}
+.card__item:last-of-type {
+  padding: 0;
+}
+.card__link {
+  /* display: flex; */
+  border-bottom: 2px solid transparent;
+  color: var(--clr-primary);
+}
+.card__link:hover {
+  border-bottom: 2px solid var(--clr-primary);
+}
+
+/*------------ S E C T I O N S ------------*/
 
 /* Navigation */
 .header {
@@ -255,4 +305,22 @@ a {
 }
 .footer__links > a:hover {
   border-bottom: 3px solid var(--clr-primary);
+}
+
+/* Results */
+
+.results {
+  text-align: center;
+}
+.results__res {
+  padding-bottom: var(--spacing-l);
+}
+.results__res--no-results {
+  padding: calc(var(--spacing-xxl) * 2.5) 0;
+}
+.results__res > h1 {
+  color: var(--clr-primary);
+}
+.results__res > p {
+  color: var(--clr-black-25);
 }

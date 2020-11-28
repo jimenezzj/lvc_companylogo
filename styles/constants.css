@@ -26,7 +26,8 @@
   --fs-body-l: 24px;
   --fs-body-s: 14px;
 
-  --bs: 0.25rem 0.25rem 0.75rem rgba(0, 0, 0, 0.25),
+  --bs: 0 0px 4px 0 rgba(0, 0, 0, 0.5);
+  --bs-bold: 0.25rem 0.25rem 0.75rem rgba(0, 0, 0, 0.25),
     0.15rem 0.15rem 0.125rem rgba(0, 0, 0, 0.15);
 
   /* Spacing */
