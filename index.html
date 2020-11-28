@@ -10,35 +10,79 @@
 </head>
 
 <body>
-    <header>
+    <header class="header">
         <a href="#">
-
+            <img src="assets/svg/Logo.svg" alt="Company logo that redirects to home page">
         </a>
         <div class="nav-actions">
-            <button class="btn btn-search"></button>
-            <button class="btn btn-profile"></button>
+            <button class="btn btn-nav-search">
+                <img src="assets/svg/icn_search.svg" alt="Button to search some info in the website">
+            </button>
+            <button class="btn btn-profile">
+                <img src="assets/svg/icn_person.svg" alt="Button that opens user profile options">
+            </button>
         </div>
     </header>
 
     <body>
+        <section class="results" style="display: none;">
+            <h1>
+                X Reusults
+            </h1>
+            <p class="body-l">
+                Try starting a new search below
+            </p>
+            <div class="card">
+                <figure>
+
+                </figure>
+                <div class="card__info">
+                    <h2>John Smith, 35</h2>
+                    <p class="base">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.
+                    </p>
+                    <ul class="info__list">
+                        <li class="info__item">
+                            <h3>Adress</h3>
+                            <p class="body-s">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua.
+                            </p>
+                        </li>
+                        <li class="info__item">
+                            <h3>Email</h3>
+                            <p class="body-s">
+                                loremipsum@dolorsit.com
+                            </p>
+                        </li>
+                        <li class="info__item">
+                            <h3>Phone Numbers</h3>
+                            <a href="tel:+555-5555-5555" class="info__item-link">(+555) 5555-55555</a>
+                            <a href="tel:+555-5555-5555" class="info__item-link">(+555) 5555-55555</a>
+                            <a href="tel:+555-5555-5555" class="info__item-link">(+555) 5555-55555</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
         <div class="email-search">
             <h2>
                 Search Any EMail ADress
             </h2>
             <p class="email-search__info">
-                <span class="">Start Here</span>
+                <strong class="">Start Here</strong>
                 - Look up the owner's name, photos and online profiles. See what you find!
             </p>
-            <div class="search-bar">
-                <input type="search" name="search-email" id="search-email">
-                <button class="btn">
-
-                </button>
+            <div class="search-bar search-bar--error">
+                <input type="search" name="search-email" id="search-email" placeholder="Name">
                 <small class="search-bar__mess">
                     Please add a valid email address
                 </small>
+                <button class="btn btn-primary btn-search">Go!</button>
             </div>
-            <p class="body-s">
+            <p class="email-search__warn">
+                <img src="assets/svg/lock.svg" alt="">
                 Enter Any Email Address. They won't be notified.
             </p>
         </div>

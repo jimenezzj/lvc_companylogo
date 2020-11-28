@@ -1,22 +1,36 @@
 /* Custom Properties */
 :root {
-    --ff-primary: "Source Sans Pro", sans-serif;
-    --ff-secondary: "Source Code Pro", monospace;
-  
-    --fw-reg: 300;
-    --fw-bold: 900;
-  
-    --clr-light: #fff;
-    --clr-dark: #303030;
-    --clr-accent: #16e0bd;
-    --clr-accent-darker: #12c2a5;
-  
-    --fs-h1: 2rem;
-    --fs-h2: 2.25rem;
-    --fs-h3: 1.25rem;
-    --fs-body: 1rem;
-  
-    --bs: 0.25rem 0.25rem 0.75rem rgba(0, 0, 0, 0.25),
-      0.15rem 0.15rem 0.125rem rgba(0, 0, 0, 0.15);
-  }
-  
+  --ff-primary: "Helvetica Neue", sans-serif;
+  --ff-secondary: "Open Sans", monospace;
+
+  --fw-reg: 400;
+  --fw-med: 600;
+  --fw-bold: 800;
+
+  --clr-light: #fff;
+  --clr-dark: #2c2c2c;
+  --clr-primary: #004a80;
+  --clr-secondary: #f6bc25;
+  --clr-secondary-light: #f2da56;
+  --clr-black-25: #4a4a4a;
+  --clr-black-5: #f8f8f8;
+  --clr-red: #dc0015;
+
+  --fs-h1: 2.25rem;
+  --fs-h2: 2rem;
+  --fs-h3: 1.5rem;
+  --fs-body: 18px;
+  --fs-body-l: 24px;
+  --fs-body-s: 14px;
+
+  --bs: 0.25rem 0.25rem 0.75rem rgba(0, 0, 0, 0.25),
+    0.15rem 0.15rem 0.125rem rgba(0, 0, 0, 0.15);
+
+  /* Spacing */
+  --spacing-xxs: 0.5rem;
+  --spacing-xs: 0.75rem;
+  --spacing-s: 1rem;
+  --spacing-m: 1.5rem;
+  --spacing-l: 2rem;
+  --spacing-xl: 2.5rem;
+}
