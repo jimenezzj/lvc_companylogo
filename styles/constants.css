@@ -12,13 +12,16 @@
   --clr-primary: #004a80;
   --clr-secondary: #f6bc25;
   --clr-secondary-light: #f2da56;
+  --clr-black: #000000;
   --clr-black-25: #4a4a4a;
+  --clr-black-40: #999999;
   --clr-black-5: #f8f8f8;
   --clr-red: #dc0015;
 
   --fs-h1: 2.25rem;
   --fs-h2: 2rem;
   --fs-h3: 1.5rem;
+  --fs-h4: 1.25rem;
   --fs-body: 18px;
   --fs-body-l: 24px;
   --fs-body-s: 14px;
@@ -33,4 +36,5 @@
   --spacing-m: 1.5rem;
   --spacing-l: 2rem;
   --spacing-xl: 2.5rem;
+  --spacing-xxl: 3rem;
 }
