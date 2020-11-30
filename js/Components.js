@@ -1,15 +1,25 @@
 const Components = (() => {
 
-    const createLoaderEle = () => {
+    const createLoaderEle = (mess, fullMode = false) => {
         const wrapper = document.createElement('div');
+        const spinner = document.createElement('div');
+        const waitingMess = document.createElement('p');
         const { id, styles } = {
             id: 'loader-single-ring',
             styles: ['loader-single-ring']
         }
+        if (fullMode) {
+            wrapper.classList.add('loader-fullmode');
+        }
+        wrapper.classList.add('loader-wrapp');
         wrapper.id = id;
         styles.forEach(cls => {
-            wrapper.classList.add(cls);
+            spinner.classList.add(cls);
         });
+        waitingMess.classList.add('loader-wrapp__mess');
+        waitingMess.textContent = mess;
+        wrapper.appendChild(spinner);
+        wrapper.appendChild(waitingMess);
         return wrapper;
     }
 

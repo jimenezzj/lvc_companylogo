@@ -5,7 +5,7 @@
 
   --fw-reg: 400;
   --fw-med: 600;
-  --fw-bold: 800;
+  --fw-bold: 700;
 
   --clr-light: #fff;
   --clr-dark: #2c2c2c;
@@ -38,4 +38,11 @@
   --spacing-l: 2rem;
   --spacing-xl: 2.5rem;
   --spacing-xxl: 3rem;
+
+  --mobile: 540px;
+  --tablet: 720px;
+  --desktop: 960px;
+  --desktop-l: 1280px;
+  --desktop-xl: 1680px;
+  --desktop-xxl: 2560px;
 }

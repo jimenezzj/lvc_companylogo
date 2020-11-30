@@ -25,60 +25,71 @@
     </header>
 
     <body>
-        <div class="loader-single-ring">
-        </div>
-        <section class="results" style="">
-            <div class="results__res results__res--no-results">
-                <h1>
-                    X Reusults
-                </h1>
-                <p class="">
-                    Try starting a new search below
-                </p>
+        <!-- <div class="loader-wrapp">
+            <div id="loader-single-ring" class="loader-single-ring">
             </div>
-            <div class="card" style="">
-                <figure>
+            <p class="loader-wrapp__mess">Please wait a moment...</p>
+        </div> -->
+        <section id="results" class="results results--hidden">
+            <!-- <div class="loader-wrapp">
+                <div id="loader-single-ring" class="loader-single-ring">
+                </div>
+                <p class="loader-wrapp__mess">Please wait a moment...</p>
+            </div> -->
+            <div id="results__result" class="results__result">
+                <div id="results" class="results__res results__res--no-results">
+                    <h1 id="resultsTitle">
 
-                </figure>
-                <div class="card__info">
-                    <h2>John Smith, 35</h2>
-                    <p class="">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua.
+                    </h1>
+                    <p id="resultsDesc">
+
                     </p>
-                    <ul class="card__list">
-                        <li class="card__item">
-                            <h3>Adress</h3>
-                            <p class="">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.
-                            </p>
-                        </li>
-                        <li class="card__item">
-                            <h3>Email</h3>
-                            <p class="">
-                                loremipsum@dolorsit.com
-                            </p>
-                        </li>
-                        <li class="card__item">
-                            <h3>Phone Numbers</h3>
-                            <ul>
-                                <li>
-                                    <a href="tel:+555-5555-5555" class="card__link">(+555) 5555-55555</a>
-                                </li>
-                                <li>
-                                    <a href="tel:+555-5555-5555" class="card__link">(+555) 5555-55555</a>
-                                </li>
-                                <li>
-                                    <a href="tel:+555-5555-5555" class="card__link">(+555) 5555-55555</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+                </div>
+                <div class="card" id="esra">
+                    <figure>
+                    </figure>
+                    <div class="card__info">
+                        <h2>John Smith, 35</h2>
+                        <p class="">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                            ut
+                            labore et dolore magna aliqua.
+                        </p>
+                        <ul class="card__list">
+                            <li class="card__item">
+                                <h3>Adress</h3>
+                                <p class="">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua.
+                                </p>
+                            </li>
+                            <li class="card__item">
+                                <h3>Email</h3>
+                                <p class="">
+                                    loremipsum@dolorsit.com
+                                </p>
+                            </li>
+                            <li class="card__item">
+                                <h3>Phone Numbers</h3>
+                                <ul>
+                                    <li>
+                                        <a href="tel:+555-5555-5555" class="card__link">(+555) 5555-55555</a>
+                                    </li>
+                                    <li>
+                                        <a href="tel:+555-5555-5555" class="card__link">(+555) 5555-55555</a>
+                                    </li>
+                                    <li>
+                                        <a href="tel:+555-5555-5555" class="card__link">(+555) 5555-55555</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+
         </section>
-        <div class="email-search">
+        <div class="email-search" id="email-search">
             <h2>
                 Search Any EMail ADress
             </h2>
@@ -88,17 +99,17 @@
             </p>
             <div class="search-bar">
                 <input type="search" name="search-email" id="search-email" placeholder="Name">
-                <small class="search-bar__mess">
+                <small class="search-bar__mess" id="error-mess">
                     Please add a valid email address
                 </small>
-                <button class="btn btn-primary btn-search">Go!</button>
+                <button class="btn btn-primary btn-search" id="btn-search-email">Go!</button>
             </div>
             <p class="email-search__warn">
                 <img src="assets/svg/lock.svg" alt="">
                 Enter Any Email Address. They won't be notified.
             </p>
         </div>
-        <section class="instructions">
+        <section class="instructions" id="instructions">
             <h1>
                 Reveser EMial Lookup
             </h1>
@@ -182,20 +193,25 @@
                 </li>
             </ol>
         </section>
+        <footer class="footer" id="footer">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex
+                ea commodo consequat.
+            </p>
+            <div class="footer__links">
+                <a href="#">Terms</a>
+                |
+                <a href="#">Privacy</a>
+            </div>
+        </footer>
     </body>
-    <footer class="footer">
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat.
-        </p>
-        <div class="footer__links">
-            <a href="#">Terms</a>
-            |
-            <a href="#">Privacy</a>
-        </div>
-    </footer>
 
+    <script src='js/util/UrlHandler.js'></script>
+    <script src='js/util/Util.js'></script>
+    <script src='js/Components.js'></script>
+    <script src='js/Data.js'></script>
     <script src='js/main.js'></script>
 </body>
 
