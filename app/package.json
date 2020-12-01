@@ -1,0 +1,23 @@
+{
+  "name": "lvc-challenge",
+  "version": "1.0.0",
+  "description": "This is a challenge from LVC",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jimenezzj/lvc_companylogo.git"
+  },
+  "author": "Jonathan Jimenez Z",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jimenezzj/lvc_companylogo/issues"
+  },
+  "homepage": "https://github.com/jimenezzj/lvc_companylogo#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
