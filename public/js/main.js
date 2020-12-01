@@ -165,6 +165,12 @@ const showLoader = (idWrapper) => {
     parentEle.appendChild(createLoaderEle(loading.mess, true));
 };
 
+const cleanSearch = () => {
+    const cards = document.querySelectorAll('.card');
+    console.log(cards);
+    cards.forEach(c => c.remove());
+};
+
 function generateCardItemObjs(items, optsTypeEle) {
     const keys = Object.keys(items);
     return keys.map(k => ({
@@ -219,6 +225,7 @@ const showUserCards = (email) => {
     resultsEle.classList.add('results--hidden');
     emailSearchEle.classList.add('email-search--hidden');
     instructionsEle.classList.add('instructions--hidden');
+    cleanSearch();
     showLoader(resultsEle.id);
 };
 
