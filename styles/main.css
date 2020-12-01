@@ -119,7 +119,7 @@ a {
   margin: 0;
 }
 
-.card > figure {
+.card__image {
   display: none;
 }
 
@@ -156,6 +156,33 @@ a {
 }
 .card__link:hover {
   border-bottom: 2px solid var(--clr-primary);
+}
+
+@media screen and (min-width: 720px) {
+  .card {
+    display: flex;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .card__image {
+    display: block;
+    flex-shrink: 0;
+    height: 5rem;
+    width: 5rem;
+    background-color: var(--clr-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 var(--spacing-m);
+  }
+  .card__image > img {
+    display: block;
+    width: 40%;
+  }
+  .card__info {
+    flex-grow: 1;
+  }
 }
 
 /* Loader */
@@ -230,12 +257,21 @@ a {
 /*------------ S E C T I O N S ------------*/
 
 /* Navigation */
-.header {
+.nav {
   display: flex;
   background-color: var(--clr-primary);
   justify-content: space-between;
   align-items: center;
   padding: 0 var(--spacing-xs);
+}
+.header {
+  background-color: var(--clr-primary);
+}
+@media screen and (min-width: 720px) {
+  .nav {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
 }
 
 /* Email Search */
@@ -273,6 +309,7 @@ a {
 .search-bar {
   display: flex;
   flex-flow: column wrap;
+  position: relative;
 }
 .search-bar > * {
   margin-bottom: var(--spacing-s);
@@ -298,6 +335,8 @@ a {
 }
 
 .search-bar__mess {
+  position: absolute;
+  top: 0%;
   background-color: var(--clr-red);
   text-align: start;
   padding: var(--spacing-xxs);
@@ -308,14 +347,23 @@ a {
     opacity 250ms ease-in, z-index 0s linear 300ms;
   opacity: 0;
 }
+.search-bar--error > .search-bar__mess {
+  /* position: block;
+  margin-bottom: var(--spacing-s);
+  transform: translateY(0%);
+  opacity: 1; */
+}
 .search-bar__mess--show {
+  position: relative;
+  margin-bottom: var(--spacing-s);
   transform: translateY(0%);
   opacity: 1;
   /* z-index: 1; */
 }
 
-/* .btn-search {
-} */
+.btn-search {
+  margin-bottom: var(--spacing-s);
+}
 
 @media screen and (max-width: 540px) {
   .search-bar > * {
@@ -325,14 +373,11 @@ a {
 }
 @media screen and (min-width: 720px) {
   .email-search {
-    padding: var(--spacing-l);
-  }
-  .email-search > h2 {
-    font-size: calc(var(--fs-h1) * 1.2);
+    padding: calc(var(--spacing-xxl) * 1.2) var(--spacing-m);
   }
 
   .email-search__info {
-    font-size: calc(var(--fs-body) * 1.2);
+    /* font-size: calc(var(--fs-body) * 1.2); */
   }
   .search-bar {
     position: relative;
@@ -346,7 +391,7 @@ a {
   }
   .search-bar__mess {
     position: absolute;
-    bottom: var(--spacing-xxs);
+    top: calc(var(--spacing-xxl) + 1rem);
     margin: 0;
   }
   .btn-search {
@@ -369,9 +414,6 @@ a {
   }
   .search-bar > input {
     font-size: var(--fs-body-l);
-  }
-  .search-bar__mess {
-    bottom: calc(var(--spacing-xxs) + 1rem);
   }
 }
 
@@ -431,14 +473,14 @@ a {
 
 @media screen and (min-width: 720px) {
   .instructions > p {
-    font-size: calc(var(--fs-body-l));
+    /* font-size: calc(var(--fs-body-l)); */
   }
   .instructions > h1 {
-    font-size: calc(var(--fs-h1) * 1.2);
+    /* font-size: calc(var(--fs-h1) * 1.2); */
     padding-bottom: var(--spacing-l);
   }
   .instructions__info > h2 {
-    font-size: calc(var(--fs-h4) * 1.2);
+    /* font-size: calc(var(--fs-h4) * 1.2); */
   }
   .instructions__list {
     padding: var(--spacing-l) var(--spacing-xs);
@@ -449,7 +491,7 @@ a {
     flex-basis: 50%;
   }
   .instructions__item p {
-    font-size: calc(var(--fs-body));
+    font-size: calc(var(--fs-body-s));
   }
   .instructions__item:nth-of-type(odd) {
     padding-right: var(--spacing-l);
@@ -528,20 +570,20 @@ a {
   .footer {
     display: flex;
     align-items: center;
-    font-size: calc(var(--fs-body-s) * 1.2);
+    font-size: var(--fs-body-s);
   }
   .footer__links {
     padding: 0;
     flex-basis: 70%;
   }
 }
-/* Results */
 
+/* Results */
 .results {
   text-align: center;
 }
 .results--hidden {
-  padding: 0;
+  padding: 0 !important;
 }
 .results__result {
   display: none;
@@ -560,4 +602,10 @@ a {
 }
 .results__res > p {
   color: var(--clr-black-25);
+}
+
+@media screen and (min-width: 720px) {
+  .results {
+    padding-bottom: var(--spacing-xxl);
+  }
 }

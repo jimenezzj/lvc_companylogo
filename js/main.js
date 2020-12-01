@@ -16,6 +16,10 @@ const CORS_ANYWHERE_PUBLIC = 'https://cors-anywhere.herokuapp.com/'; // this is 
 const { createCard, createLoaderEle } = Components;
 const DATA = pages.filter(p => p.pageName === PAGE_NAME)[0].data;
 
+const PAGES = {
+    emailSearch: 0,
+    results: 1,
+};
 
 /**
  * 
@@ -33,11 +37,37 @@ const showError = (idEle, status = true, mess = "Typed value is invalid") => {
         errorMessEle.nodeValue = mess;
         errorMessEle.classList.add(SHOW_MESS);
         fieldWrapp.classList.add(WRAPP_ERROR);
-        console.log(status, "Show erro");
+        console.log(status, "Show error");
         return;
     }
     errorMessEle.classList.remove(SHOW_MESS);
     fieldWrapp.classList.remove(WRAPP_ERROR);
+}
+
+const loadInstructionsInfo = () => {
+    const { instrucctions } = DATA
+    const instrucsTitle = instructionsEle.querySelector('h1');
+    const instrucsDesc = instructionsEle.querySelector('p');
+    instrucsTitle.textContent = instrucctions.title;
+    instrucsDesc.textContent = instrucctions.desc;
+    instrucctions.list.forEach(ins => {
+
+    });
+};
+
+const loadEmailSearchInfo = (page) => {
+    const { emailSearch } = DATA;
+    const info = emailSearch.info[page] || 'page';
+    const emailTitle = emailSearchEle.querySelector('h2');
+    const emailDesc = emailSearchEle.querySelector('.email-search__info > span');
+    const emailHighLight = emailSearchEle.querySelector('.email-search__info > strong');
+    const emailWarn = emailSearchEle.querySelector('.email-search__warn > span');
+    const emailErrMess = emailSearchEle.querySelector('#error-mess');
+    emailWarn.textContent = emailSearch.warn;
+    emailTitle.textContent = info.title;
+    emailDesc.textContent = info.desc;
+    emailHighLight.textContent = info.highlight;
+    emailErrMess.textContent = emailSearch.errors.invalidEmail;
 }
 
 const setResultsTest = (title, desc) => {
@@ -97,13 +127,11 @@ const createUserCardItem = item => {
     return itemEle;
 };
 
-const changeToPage = () => {
-    
-}
 
 const createUserCard = (title, des, items) => {
     // create elements and add styles
     const imageWrapp = document.createElement('figure');
+    const image = document.createElement('img');
     const cardInfo = document.createElement('div');
     const titleEle = document.createElement('h2');
     const descEle = document.createElement('p');
@@ -111,8 +139,12 @@ const createUserCard = (title, des, items) => {
     // userCardWrapp.classList.add('card');
     cardInfo.classList.add('card__info');
     itemsList.classList.add('card__list');
+    imageWrapp.classList.add('card__image');
     titleEle.textContent = title;
     descEle.textContent = des;
+    image.setAttribute('src', 'assets/svg/icn_person.svg');
+    image.setAttribute('alt', `Profile picture of ${title}`);
+    imageWrapp.appendChild(image);
 
     items.map(item => createUserCardItem(item))
         .forEach(li => {
@@ -143,7 +175,7 @@ function generateCardItemObjs(items, optsTypeEle) {
 }
 
 const showUserCards = (email) => {
-    const resultsEle = document.querySelector(`#results`);
+    // const resultsEle = document.querySelector(`#results`);
     function appendCardsToParent(items) {
         items.forEach(u => {
             const { first_name, last_name, description } = u;
@@ -172,16 +204,21 @@ const showUserCards = (email) => {
             const { title, desc } = DATA.results;
             let message = '';
             spinner.remove();
+            appendCardsToParent(usersArr);
+            emailSearchEle.classList.remove('email-search--hidden');
+
             resultsEle.querySelector('#results__result').classList.add('results__result--show');
             resultsEle.classList.remove('results--hidden');
-            instructionsEle.classList.add('instructions--hidden');
-            emailSearchEle.classList.remove('email-search--hidden');
-            appendCardsToParent(usersArr);
+
             if (usersArr.length < 1) message = desc.faild;
             else message = desc.sucss;
             setResultsTest(title(usersArr.length), message);
+            loadEmailSearchInfo('result');
+            inptEmail.value = '';
         });
+    resultsEle.classList.add('results--hidden');
     emailSearchEle.classList.add('email-search--hidden');
+    instructionsEle.classList.add('instructions--hidden');
     showLoader(resultsEle.id);
 };
 
@@ -196,10 +233,6 @@ const getUsersByEmail = (email) => {
     if (endPoint) {
         return fetch((CORS_ANYWHERE_PUBLIC + endPoint), { ...headers })
             .then(res => res.json());
-        //     .then(res => {
-
-        //     });
-        // showLoader(parentEle.id);
     }
 }
 
@@ -213,10 +246,6 @@ const searchUser = (e) => {
     showError(id, true, 'Value inserted is not an e-mail'); // show error message with custom message
 };
 
-inptEmail.addEventListener('keyup', (e) => {
-    const { target } = e;
-    // console.log(target);
-    // console.log(target.value);
-})
-
+loadEmailSearchInfo('home');
+loadInstructionsInfo()
 btnSearchEmail.addEventListener('click', searchUser);
